@@ -60,6 +60,7 @@ export function SetupAddArtist(){
 
         apiActions.postRequest("https://localhost:44313/api/artists/", newArtist, data => {
             title.innerText = "Artist Details";
+            console.log(data);
             pageContent.innerHTML = Artist.DisplayArtist(data);
             Artist.SetupEditButton();
           

@@ -35,6 +35,20 @@ namespace album_collection.Controllers
             return _db.Artists.ToList();
         }
 
+        [HttpPut("{id}")]
+        public ActionResult<Artist> Put(int id, [FromBody] Artist artist)
+        {
+            if (artist.Id == id)
+            {
+                _db.Artists.Update(artist);
+                _db.SaveChanges();
+            }
+
+            return artist;
+        }
+
+
+
         [HttpDelete("{id}")]
         public ActionResult<IEnumerable<Artist>> Delete(int id)
         {

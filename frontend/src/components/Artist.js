@@ -11,12 +11,12 @@ const pageContent = document.getElementById('pageContent');
 const title = document.getElementById('title');
 
 function DisplayArtist(artist){
-    console.log(artist);
+    console.log("artist data: " + artist);
     Artist = artist;
     if(artist.albums == null){
         artist.albums = [];
     }
-    
+    console.log("details" + artist.name);
     return `
         <h3>${artist.name}</h3>
         <button id="btnEditArtist">Edit</button>
